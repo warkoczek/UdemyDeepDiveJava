@@ -1,7 +1,8 @@
 package pl.warkoczewski.UdemyDeepDiveJava.repository.impl;
 
+import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.Sort;
-
+@Service
 public class ArraySortImpl implements Sort {
     private final int[] array;
 
