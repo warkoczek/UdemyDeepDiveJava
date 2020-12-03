@@ -23,10 +23,10 @@ public class ArraySortImpl implements Sort {
     }
     private void traverseToLastUnsortedIndex(int last) {
         for(int i=0; i < last; i++){
-            check(i, i +1);
+            check(i);
         }
     }
-    private void check(int i, int j){
+    private void check(int i){
         if(array[i] < array[i+1]) {
             swap(i, i + 1);
         }
