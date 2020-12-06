@@ -10,6 +10,11 @@ public class BubbleSortServiceServiceImpl implements BubbleSortService {
     private final NumberRepository numberRepository;
     public BubbleSortServiceServiceImpl(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
+        int[] sorted = sortAsc();
+        System.out.println("Bubble");
+        for(int i = 0; i < sorted.length; i++){
+            System.out.println(sorted[i]);
+        }
     }
 
     @Override
