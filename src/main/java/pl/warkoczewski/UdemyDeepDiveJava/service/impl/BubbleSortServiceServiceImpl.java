@@ -1,17 +1,19 @@
 package pl.warkoczewski.UdemyDeepDiveJava.service.impl;
 
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
-import pl.warkoczewski.UdemyDeepDiveJava.service.SortingService;
+import pl.warkoczewski.UdemyDeepDiveJava.service.BubbleSortService;
 @Service
-public class BubbleSortService implements SortingService {
+public class BubbleSortServiceServiceImpl implements BubbleSortService {
     private final NumberRepository numberRepository;
-    public BubbleSortService(NumberRepository numberRepository) {
+    public BubbleSortServiceServiceImpl(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
     }
 
     @Override
-    public int[] bubbleSortAsc() {
+    public int[] sortAsc() {
         int[] array = numberRepository.getArray();
         int last = array.length-1;
         while(last > 0) {
