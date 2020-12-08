@@ -1,12 +1,11 @@
 package pl.warkoczewski.UdemyDeepDiveJava.service.impl;
 
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
-import pl.warkoczewski.UdemyDeepDiveJava.service.BubbleSortService;
+import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
+
 @Service
-public class BubbleSortServiceServiceImpl implements BubbleSortService {
+public class BubbleSortServiceServiceImpl implements SortService {
     private final NumberRepository numberRepository;
     public BubbleSortServiceServiceImpl(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
@@ -16,7 +15,7 @@ public class BubbleSortServiceServiceImpl implements BubbleSortService {
             System.out.println(sorted[i]);
         }
     }
-
+    //stable when two numbers are the same, preserves order if < or > used not when =< or >=
     @Override
     public int[] sortAsc() {
         int[] array = numberRepository.getArray();

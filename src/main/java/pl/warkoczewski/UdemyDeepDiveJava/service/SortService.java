@@ -1,5 +1,5 @@
 package pl.warkoczewski.UdemyDeepDiveJava.service;
 
-public interface SelectionSortService {
+public interface SortService {
     int[] sortAsc();
 }

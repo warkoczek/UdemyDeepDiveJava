@@ -2,10 +2,10 @@ package pl.warkoczewski.UdemyDeepDiveJava.service.impl;
 
 import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
-import pl.warkoczewski.UdemyDeepDiveJava.service.SelectionSortService;
+import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
 
 @Service
-public class SelectionSortServiceImpl implements SelectionSortService {
+public class SelectionSortServiceImpl implements SortService {
     private final NumberRepository numberRepository;
 
     public SelectionSortServiceImpl(NumberRepository numberRepository) {
