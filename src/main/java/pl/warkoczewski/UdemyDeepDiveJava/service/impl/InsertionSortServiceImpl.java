@@ -20,11 +20,12 @@ public class InsertionSortServiceImpl implements SortService {
     public int[] sortAsc() {
         int[] array = numberRepository.getArray();
         for(int firstUnSortedIndex = 1; firstUnSortedIndex < array.length; firstUnSortedIndex++) {
-            for (int i = firstUnSortedIndex; i > 0; i--) {
-                if(array[i] < array[i-1]){
-                    swapNumbers(array, i, i-1);
-                }
+            int elementToShift = array[firstUnSortedIndex];
+            int i;
+            for (i = firstUnSortedIndex; i > 0 && array[firstUnSortedIndex -1] < elementToShift; i--) {
+                array[i] = array[i-1];
             }
+            array[i] = elementToShift;
         }
         return array;
     }
