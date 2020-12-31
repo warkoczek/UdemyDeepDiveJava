@@ -19,7 +19,7 @@ public class InsertionSortServiceImpl implements SortService {
     @Override
     public int[] sortAsc() {
         int[] array = numberRepository.getArray();
-        for(int firstUnSortedIndex = 1; firstUnSortedIndex <= array.length - 1; firstUnSortedIndex++) {
+        for(int firstUnSortedIndex = 1; firstUnSortedIndex < array.length; firstUnSortedIndex++) {
             for (int i = firstUnSortedIndex; i > 0; i--) {
                 if(array[i] < array[i-1]){
                     swapNumbers(array, i, i-1);
