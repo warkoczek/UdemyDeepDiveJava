@@ -22,7 +22,7 @@ public class InsertionSortServiceImpl implements SortService {
         for(int firstUnSortedIndex = 1; firstUnSortedIndex < array.length; firstUnSortedIndex++) {
             int elementToShift = array[firstUnSortedIndex];
             int i;
-            for (i = firstUnSortedIndex; i > 0 && array[firstUnSortedIndex -1] < elementToShift; i--) {
+            for (i = firstUnSortedIndex; i > 0 && array[firstUnSortedIndex -1] > elementToShift; i--) {
                 array[i] = array[i-1];
             }
             array[i] = elementToShift;
