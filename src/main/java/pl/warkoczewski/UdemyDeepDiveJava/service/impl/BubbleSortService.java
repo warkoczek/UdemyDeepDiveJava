@@ -5,9 +5,9 @@ import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
 import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
 
 @Service
-public class BubbleSortServiceServiceImpl implements SortService {
+public class BubbleSortService implements SortService {
     private final NumberRepository numberRepository;
-    public BubbleSortServiceServiceImpl(NumberRepository numberRepository) {
+    public BubbleSortService(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
         int[] sorted = sortAsc();
         System.out.println("Bubble");

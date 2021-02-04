@@ -5,10 +5,10 @@ import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
 import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
 
 @Service
-public class SelectionSortServiceImpl implements SortService {
+public class SelectionSortService implements SortService {
     private final NumberRepository numberRepository;
 
-    public SelectionSortServiceImpl(NumberRepository numberRepository) {
+    public SelectionSortService(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
         int[] sorted = sortAsc();
         System.out.println("Selection");

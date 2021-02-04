@@ -4,10 +4,10 @@ import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
 import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
 @Service
-public class InsertionSortServiceImpl implements SortService {
+public class InsertionSortService implements SortService {
     private final NumberRepository numberRepository;
 
-    public InsertionSortServiceImpl(NumberRepository numberRepository) {
+    public InsertionSortService(NumberRepository numberRepository) {
         this.numberRepository = numberRepository;
         int[] sorted = sortAsc();
         System.out.println("Insertion");
