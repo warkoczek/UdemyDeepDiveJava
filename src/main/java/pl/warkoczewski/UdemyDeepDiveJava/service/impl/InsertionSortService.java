@@ -1,14 +1,13 @@
 package pl.warkoczewski.UdemyDeepDiveJava.service.impl;
 
 import org.springframework.stereotype.Service;
-import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
 import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
+import pl.warkoczewski.UdemyDeepDiveJava.util.MyUtils;
+
 @Service
 public class InsertionSortService implements SortService {
-    private final NumberRepository numberRepository;
 
-    public InsertionSortService(NumberRepository numberRepository) {
-        this.numberRepository = numberRepository;
+    public InsertionSortService() {
         int[] sorted = sortAsc();
         System.out.println("Insertion");
         for(int i = 0; i < sorted.length; i++){
@@ -18,7 +17,7 @@ public class InsertionSortService implements SortService {
 
     @Override
     public int[] sortAsc() {
-        int[] array = numberRepository.getArray();
+        int[] array = MyUtils.ARRAY_OF_NUMBERS;
         for(int firstUnSortedIndex = 1; firstUnSortedIndex < array.length; firstUnSortedIndex++) {
             int elementToShift = array[firstUnSortedIndex];
             int i;

@@ -7,5 +7,17 @@
 </head>
 <body>
 <h1 th:text="${sortMessage}"></h1>
+<div class="container">
+    <h2>Sorting Type:</h2><br>
+    <form th:action="@{/sort/sortingTypeForm}" th:method="post" th:object="${sortDataDTO}">
+        <div class="input-group">
+            <label class="control-label" th:for="sort">Sort</label><br>
+            <select th:field="*{sortType}">
+                <!--/*@thymesVar id="values" type="pl.warkoczewski.UdemyDeepDiveJava.model.SortType"*/-->
+                <option th:each="sortType : ${T(pl.warkoczewski.UdemyDeepDiveJava.model.SortType).values()}" th:text="${sortType}" th:value="${sortType}"></option>
+            </select>
+        </div><br>
+    </form>
+</div>
 </body>
 </html>

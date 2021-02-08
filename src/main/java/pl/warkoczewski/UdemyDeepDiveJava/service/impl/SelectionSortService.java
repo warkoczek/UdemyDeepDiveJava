@@ -3,13 +3,12 @@ package pl.warkoczewski.UdemyDeepDiveJava.service.impl;
 import org.springframework.stereotype.Service;
 import pl.warkoczewski.UdemyDeepDiveJava.repository.NumberRepository;
 import pl.warkoczewski.UdemyDeepDiveJava.service.SortService;
+import pl.warkoczewski.UdemyDeepDiveJava.util.MyUtils;
 
 @Service
 public class SelectionSortService implements SortService {
-    private final NumberRepository numberRepository;
 
-    public SelectionSortService(NumberRepository numberRepository) {
-        this.numberRepository = numberRepository;
+    public SelectionSortService() {
         int[] sorted = sortAsc();
         System.out.println("Selection");
         for(int i = 0; i < sorted.length; i++){
@@ -19,7 +18,7 @@ public class SelectionSortService implements SortService {
 
     @Override
     public int[] sortAsc() {
-        int[] array = numberRepository.getArray();
+        int[] array = MyUtils.ARRAY_OF_NUMBERS;
         getSortedArray(array);
         return array;
 
