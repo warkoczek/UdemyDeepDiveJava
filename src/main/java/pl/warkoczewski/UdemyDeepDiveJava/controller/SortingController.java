@@ -5,9 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class InsertionSortController {
-    @GetMapping
+public class SortingController {
+    @GetMapping("/sort")
     public String displayInsertionSortPage(Model model){
-        return "/sort/insertionSort";
+        model.addAttribute("sortMessage", "Pick up sorting method");
+        return "/sort/sort";
     }
 }

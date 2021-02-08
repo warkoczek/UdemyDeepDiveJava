@@ -26,10 +26,13 @@ public class ShellSortService implements SortService {
     }
 
     private void sortArray(int[] array) {
+        //traverse using the gap
         for(int gap = array.length/2; gap > 0; gap /= 2){
+            //traverse for each gap
             for(int i = gap; i < array.length; i++){
                 int newElement = array[i];
                 int j = i;
+                // insertion sort
                 while(j >= gap && array[j - gap] > newElement){
                     array[j] = array[j - gap];
                     j -= gap;
